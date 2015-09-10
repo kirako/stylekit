@@ -1,0 +1,116 @@
+/*-------------------------------------------------------------------------------------------------------------------------
+= Team Icons
+= Special mixin for setting a team icon on a container.
+= Must be kept updated to the short names used by the teams.
+----------------------------------------------------------------------------------------------------------------------------
+-- LESS -- (call the mixin on any class)
+.team-icon { .get-team-icon(25, light)); }
+
+-- HTML --
+<span class="team-icon analytics"></span>
+
+-- OUTPUT --
+Should display the 25px white icon for Analytics.
+-------------------------------------------------------------------------------------------------------------------------*/
+.get-team-icon(@size, @color) {
+    .box-sizing;
+	background: url("@{path-images}icons/@{size}-teams.png") no-repeat;
+	width: unit(@size, px);
+	height: unit(@size, px);
+	display: inline-block;
+	vertical-align: middle;
+
+	/* For new color: create a column for it in the image, then add a line here. */
+	@black: 0;
+	@white: 1;
+
+	/* Creates a variable/variable for color. */
+	@x: e(@color);
+
+	/* Scoped mixins for calculating icon position. */
+	.pos(@y) { background-position: unit(-(@@x*@size), px) unit(-(@y*@size), px); }
+
+	/* Default */					.pos(0);
+	/* Analytics */				&.analytics { .pos(1); }
+	/* Atlas */						&.atlas { .pos(2); }
+	/* Automation */			&.auto { .pos(3); }
+	/* Battle.net */				&.bnet { .pos(4); }
+	/* Battle.net App */		&.bnetapp { .pos(5); }
+	/* Compat */					&.compat { .pos(6); }
+	/* Compliance */			&.compliance { .pos(7); }
+	/* Console */				&.console { .pos(8); }
+	/* Corp Apps */			&.corpap { .pos(9); }
+	/* Engineering */			&.engi { .pos(10); }
+	/* Hacks */					&.hacks { .pos(11); }
+	/* Key Gen */					&.keygen { .pos(12); }
+	/* Leadership */			&.leader { .pos(13); }
+	/* Localization */			&.loc { .pos(14); }
+	/* Localization QA */	&.locqa { .pos(15); }
+	/* Mobile */					&.mobile { .pos(16); }
+	/* Nights */					&.nights { .pos(17); }
+	/* Recruitment */			&.recr { .pos(18); }
+	/* Team 1 QA */			&.t1qa { .pos(19); }
+	/* Team 3 QA */			&.t3qa { .pos(20); }
+	/* Team 4 QA */			&.t4qa { .pos(21); }
+	/* Team 5 QA */			&.t5qa { .pos(22); }
+	/* WoW Tools */			&.tools { .pos(23); }
+	/* Training */				&.training { .pos(24); }
+	/* UX */							&.ux { .pos(25); }
+	/* Web */						&.web { .pos(26); }
+	/* WoW QA */				&.wow { .pos(27); }
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------------
+= Product Icons
+= Same as above but for products, not teams.
+-------------------------------------------------------------------------------------------------------------------------*/
+.get-product-icon(@size, @color) {
+    .box-sizing;
+	background: url("@{path-images}icons/@{size}-products.png") no-repeat;
+	width: unit(@size, px);
+	height: unit(@size, px);
+	display: inline-block;
+	vertical-align: middle;
+
+	/* For new color: create a column for it in the image, then add a line here. */
+	@white: 0;
+
+	/* Creates a variable/variable for color. */
+	@x: e(@color);
+
+	/* Scoped mixins for calculating icon position. */
+	.pos(@y) { background-position: unit(-(@@x*@size), px) unit(-(@y*@size), px); }
+
+                                                       
+								.pos(0);		/* Unknown */
+	&.atl {					.pos(19);	/* Atlas */			}
+	&.avalon {			.pos(18);	/* Avalon */	}
+	&.bac {				.pos(17);	/* Battle.net Account & Commerce */ }
+	&.bgs {				.pos(16);	/* Battle.net Game Services */ }
+	&.blk {				.pos(15);	/* Blackthorne */  }
+	&.bnetclnt {		.pos(14);	/* Battle.net Client */ }
+	&.d3 {					.pos(13);	/* Diablo III */           }
+	&.heroes {			.pos(12);	/* Heroes of the Storm */    }
+	&.hs {					.pos(11);	/* Hearthstone */ }
+	&.ow {					.pos(10);	/* Overwatch */ }
+	&.phoenix {		.pos(9);		/* Phoenix */ }
+	&.rnrr {				.pos(8);		/* Rock 'n' Roll Racing */ }
+	&.sc2 {				.pos(7);		/* StarCraft II */        }
+	&.sdk {				.pos(6);		/* Battle.net - SDK */        }
+	&.tlv {					.pos(5);		/* The Lost Vikings */    }
+	&.auto {				.pos(4);		/* PS Automation */  }
+	&.wc {					.pos(3);		/* WarCraft */ }
+	&.web{				.pos(2);		/* Mobile & Web */  }
+	&.wow {				.pos(1);		/* World of WarCraft */   }
+
+                              
+                            
+                                      
+                                     
+                                           
+                     
+         
+                                                        
+                                                     
+}

@@ -1,0 +1,150 @@
+/*#region == Fonts ==*/
+    @path-fonts: '../../psa-style-kit/fonts/';
+
+    .font-face-woff('Blizzard', 'blizzard-regular');
+    .font-face-woff('Blizzard', 'blizzard-regular-italic', normal, italic);
+    .font-face-woff('Blizzard', 'blizzard-bold', bold);
+    .font-face-woff('Blizzard', 'blizzard-bold-italic', bold, italic);
+
+    @sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    @serif: Georgia, "Times New Roman", Times, serif;
+    @mono: Menlo,Monaco,Consolas,"Courier New",monospace;
+    @blizzard: "Blizzard", @sans-serif;
+
+    .load-font {
+        .opacity(0);
+        .load-font(@blizzard);
+    }
+/*#endregion*/
+
+/*#region == Text Base ==*/
+    @line-height: @base-line-height;
+    @font-size: @base-font-size;
+    @font-giant: round(@font-size * 2.5);
+    @font-epic: round(@font-size * 2);
+    @font-large: round(@font-size * 1.5);
+    @font-medium: round(@font-size * 1.2);
+    @font-small: round(@font-size * 0.85);
+    @font-mini: round(@font-size * 0.75);
+
+    // For mixins
+    @fontsizes: giant, epic, large, medium, small, mini;
+
+    body {
+        .text-highlight-color(@text-highlight-bg, @text-highlight-color);
+        font: normal @font-size/@line-height @blizzard;
+        color: @font-color;
+    }
+/*#endregion*/
+
+/*#region == Headings ==*/
+    h1, h2, h3, h4, h5, h6 {
+        .box-sizing;
+        font-family: @heading-font;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        .font-size(giant);
+    }
+
+    h2 {
+        .font-size(epic);
+    }
+
+    h3 {
+        .font-size(large);
+    }
+
+    h4, h5, h6 {
+        .font-size(medium);
+    }
+/*#endregion*/
+
+/*#region == Text Styles ==*/
+    a, .link {
+        color: @link-color;
+        text-decoration: none;
+        cursor: pointer;
+        background-color: transparent;
+        outline: 0;
+
+        &:hover {
+            color: @link-color-hover;
+        }
+    }
+    b, strong {
+        font-weight: 700;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    small {
+        font-size: @font-small;
+    }
+
+    p {
+        padding: 0;
+        margin: 0;
+    }
+/*#endregion*/
+
+/*#region == Blockquote ==*/
+    blockquote {
+        .inner-glow;
+        .drop-shadow;
+        background-color: @bq-bg;
+        border: 1px solid @black;
+        color: @bq-text;
+        padding: 0 10px 10px;
+        margin: 10px 20px;
+        quotes: none;
+    }
+/*#endregion*/
+
+/*#region == Code ==*/
+    pre {
+        .wordwrap;
+        .box-sizing;
+        .inner-glow;
+        .drop-shadow;
+        .striped-bg(@code-bg);
+        .text-shadow(1px 1px @code-text-shadow);
+        white-space: nowrap;
+        font-family: @code-font;
+        color: @code-text;
+        border: 1px solid @code-border;
+        padding: 10px 10px 0;
+        margin-top: 20px;
+        font-size: @font-size;
+        line-height: @font-large;
+
+        code {
+            white-space: pre-wrap;
+            padding-bottom: 10px;
+
+            > b {
+                color: @code-bold;
+            }
+        }
+    }
+/*#endregion*/
+
+/*#region == Icons ==*/
+    i {
+        &.fa-ban {
+            &, & + b {
+                color: @icon-ban;
+            }
+        }
+        &.fa-check {
+            &, & + b {
+                color: @icon-check;
+            }
+        }
+    }
+/*#endregion*/

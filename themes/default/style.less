@@ -1,0 +1,375 @@
+/*#region ==== Theme Base ====*/
+    @theme-images: '../themes/default/images/';
+    @theme-fonts: '../../themes/default/fonts/';
+
+    /*#region == Colors ==*/
+
+            @black: #111111;
+            @white: #FFFFFF;
+            @ghost: #ececec;
+            @gray: #AAAAAA;
+            @silver: #DDDDDD;
+            @smoke: #808080;
+            @slate: #6c7a89;
+            @navy: #2574a9;
+            @blue: #00aeff;
+            @aqua: #34dbdb;
+            @sky: #add8e6;
+            @teal: #00b5b5;
+            @moss: #708080;
+            @forest: #40806a;
+            @fern: #5d995d;
+            @olive: #4b7b4b;
+            @green: #00aa55;
+            @lime: #98fb98;
+            @sand: #d4d0ab;
+            @brown: #9f6b3f;
+            @lemon: #fffacd;
+            @yellow: #f4d03f;
+            @gold: #b8860b;
+            @orange: #ff8c00;
+            @red: #dc143c;
+            @coral: #d25852;
+            @rose: #fc6399;
+            @fuchsia: #d25299;
+            @mauve: #b659ac;
+            @purple: #8859b6;
+
+            // For mixins
+            @color-names: 
+                'black', 'white', 'ghost', 'gray', 'silver', 'smoke', 'slate', 'navy', 'blue', 'aqua', 'sky', 'teal', 'moss', 'forest', 'fern', 'olive', 'green', 'lime', 'sand', 'brown', 'lemon', 'yellow', 'gold', 'orange', 'red', 'coral', 'rose', 'fuchsia', 'mauve', 'purple';
+    /*#endregion*/
+
+    /*#region == Fonts ==*/
+        .font-face(League, leaguegothic-regular-webfont, @path: @theme-fonts);
+        @league: League, @sans-serif;
+
+        .font-face(Existence, Existence-Light-webfont, @path: @theme-fonts);
+        @existence: Existence, @sans-serif;
+
+        .load-font {
+            .load-font(@league);
+            .load-font(@existence);
+        }
+    /*#endregion*/
+    
+/*#endregion*/
+
+/*#region ==== Structure ====*/
+    //Header
+    @header-h1: @white;
+    @header-h2: fade(@white, 50);
+    @header-text-shadow: @black;
+    @header-font: @existence;
+    @header-bg: fade(@black, 30);
+    @header-image: 'tyrande.png';
+    @header-image2: 'sylvanas.png';
+
+    // Navigation
+    @nav-bg: @black;
+    @nav-bg-active: fade(@black, 80);
+    @nav-text: fade(@white, 50);
+    @nav-text-active: @white;
+
+    // Body
+    @body-bg: @black;
+    @body-image: 'bg.jpg';
+    @hr1: fade(@black, 20);
+    @hr2: fade(@black, 0);
+
+    // Content
+    @content-heading-border: fade(@white, 20);
+    @content-heading: @gray;
+    @content-comment-bg: fade(@black, 50);
+    @content-section-bg: fade(@black, 40);
+    @content-back-bg: @black;
+    @content-back-text: darken(@gray, 25);
+    @content-nav-bg: lighten(@black, 10);
+
+    // Footer
+    @footer-bg: fade(@black, 50);
+    @footer-text: darken(@white, 40);
+
+/*#endregion*/
+
+/*#region ==== Toolkit Customization ====*/
+    /*#region == Typography ==*/
+        // Text
+         @base-font-size: 11px;
+         @base-line-height: 16px;
+         @font-color: darken(@white, 15);
+         @heading-font: @league;
+         @none-text: lighten(@black, 25);
+         @text-highlight-bg: @blue;
+         @text-highlight-color: contrast(@blue);
+
+	    // Links
+	    @link-color: @blue;
+	    @link-color-hover: lighten(@blue, 10);
+
+	    // Blockquotes
+	    @bq-bg: darken(@blue, 30);
+	    @bq-border: @black;
+	    @bq-text: @white;
+
+	    // Code
+	    @code-bg: lighten(@black, 5);
+	    @code-font: @mono;
+	    @code-text: @blue;
+        @code-text-shadow: fade(@black, 80);
+	    @code-border: @black;
+        @code-bold: @gold;
+    /*#endregion*/
+
+    /*#region == Icons ==*/
+        @icon-ban: fade(@red, 40);
+        @icon-check: @green;
+    /*#endregion*/
+
+    /*#region == Tables ==*/
+        @table-bg: lighten(@black, 12);
+        @table-border: lighten(@black, 5);
+        @table-text-shadow: fade(@black, 10);
+        @table-text: darken(@white, 20);
+        @table-header-bg: lighten(@black, 10);
+        @table-header-text: @white;
+        @table-header-border: @black;
+        @table-header-font: @league;
+        @table-th-bg: fade(@white, 5);
+        @table-th-text: fade(@white, 80);
+        @table-th-icon: @gray;
+        @table-th-shadow: fade(@black, 10);
+        @table-row-border: @black;
+        @table-row-stripe: darken(@table-bg, 1.8);
+        @table-row-highlight: darken(@table-bg, 3);
+        @table-row-selected: fade(@blue, 10);
+        @table-row-flagged: fade(@orange, 10);
+        @table-row-roadblocked: darken(@red, 55);
+        @table-none-text: fade(@white, 20);
+        @table-none-bg: lighten(@black, 7);
+        @table-vertical-bg1: @black;
+        @table-vertical-bg2: lighten(@black, 7);
+        @table-vertical-border: fade(@black, 40);
+    /*#endregion*/
+
+    /*#region == Forms ==*/
+        @form-font: @blizzard;
+
+        // Base
+        @input-text: @white;
+        @input-text-shadow: fade(@black, 0);
+        @input-border: @black;
+        @input-bg: lighten(@black, 20);
+        @input-placeholder: fade(@white, 40);
+        @input-shadow: fade(@black, 8);
+        @input-shadow-inner: fade(@black, 25);
+        @input-required-text: fade(@blue, 50);
+        @input-characters-text: fade(@white, 30);
+        @input-focus: @blue;
+
+        // Color Selector
+        @color-selector-bg: darken(@gray, 25);
+        @color-selector-border: @black;
+
+        // Checkboxes & Radios
+        @checkradio-bg: lighten(@black, 20);
+        @checkbox-checked: @white;
+        @radio-checked: @white;
+        @checkradio-border: @black;
+        @checkradio-shadow-inner: fade(@black, 25);
+        @checkradio-text-shadow: fade(@black, 60);
+        @checkradio-active: @yellow;
+        
+        // Colored Checkboxes
+        @checkbox-color-bg-default: lighten(@black, 20);
+        @checkbox-color-bg: fade(@black, 30);
+        @checkbox-color-checked: @white;
+        @checkbox-color-border: fade(@black, 30);
+        @checkbox-color-shadow-inner: fade(@black, 15);
+        @checkbox-color-text-shadow: fade(@black, 60);
+        @checkbox-color-separator: @black;
+        @checkbox-color-text: @white;
+        @checkbox-color-text-bg: fade(@black, 50);
+        @checkbox-color-text-checked: fade(@black, 0);
+
+        // Toggle
+        @toggle-bg: fade(@white, 5);
+        @toggle-active-bg: @green;
+        @toggle-shadow-inner: fade(@black, 15);
+        @toggle-text-shadow: fade(@black, 60);
+        @toggle-border: fade(@black, 30);
+        @toggle-active-border: fade(@black, 80);
+        @toggle-text: @white;
+
+        // Markdown
+        @markdown-bg: lighten(@black, 15);
+        @markdown-border: @black;
+        @markdown-spacer: fade(@white, 5);
+        @markdown-spacer-border: fade(@black, 45);
+        @markdown-buttons: 'markdown-buttons.png';
+        @markdown-prompt-bg: lighten(@black, 10);
+        @markdown-prompt-text: darken(@white, 20);
+        @markdown-prompt-border: @black;
+
+        // Select2
+        @select2-border: @input-border;
+        @select2-text: darken(@input-text, 5);
+        @select2-bg: @input-bg;
+        @select2-input-bg: lighten(@input-bg, 5);
+        @select2-input-text: lighten(@input-text, 5);
+        @select2-input-border: @black;
+        @select2-arrow: transparent;
+        @select2-highlight-bg: fade(@black, 20);
+        @select2-highlight-text: @blue;
+        @select2: 'select2.png';
+        @select2-drop-bg: @input-bg;
+        @select2-drop-text: @input-text;
+        @select2-drop-border: @input-border;
+        @select2-spinner: 'select2-spinner.gif';
+        @select2-disabled-text: fade(@white, 50);
+        @select2-disabled-bg: @black;
+        @select2-error-bg: @red;
+        @select2-error-text: @red;
+
+        // Datepicker
+        @datepicker-bg: lighten(@black, 5);
+        @datepicker-border: @black;
+        @datepicker-text: darken(@white, 20);
+        @datepicker-text-shadow: fade(@black, 30);
+        @datepicker-header-bg: lighten(@black, 15);
+        @datepicker-header-text: @white;
+        @datepicker-header-text-shadow: fade(@black, 30);
+        @datepicker-header-arrows: @white;
+        @datepicker-th-bg: lighten(@black, 10);
+        @datepicker-th-text: fade(@white, 80);
+        @datepicker-th-text-shadow: fade(@black, 30);
+        @datepicker-day-bg-hover: fade(@white, 15);
+        @datepicker-day-disabled: lighten(@black, 20);
+        @datepicker-current-bg: fade(@blue, 30);
+        @datepicker-current-bg-hover: fade(@blue, 40);
+        @datepicker-current-text: @white;
+        @datepicker-today-bg: fade(@white, 30);
+        @datepicker-today-bg-hover: fade(@white, 40);
+        @datepicker-today-text: @white;
+
+        // Timepicker
+        @timepicker-bg: lighten(@black, 10);
+        @timepicker-border: @black;
+        @timepicker-icon: @white;
+        @timepicker-hover: @blue;
+		@timepicker-header-bg: lighten(@black, 15);
+		@timepicker-font: @league;
+		@timepicker-button: lighten(@black, 15);
+		@timepicker-face-bg: lighten(@black, 5);
+		@timepicker-face-border: @black;
+		@timepicker-face-text: darken(@white, 40);
+		@timepicker-face-text-hover: @white;
+		@timepicker-face-bg-hover: fade(@blue, 20);
+		@timepicker-hand: darken(@blue, 30);
+		@timepicker-hand-line: @blue;
+
+        // Validation Errors
+        @error-bg: @red;
+        @error-text: contrast(@error-bg);
+        @error-border: @black;
+        @error-icon: @yellow;
+
+        // Preview
+        @preview-text: fade(@white, 80);
+        @preview-text-shadow: fade(@black, 80);
+        @preview-bg: lighten(@black, 10);
+        @preview-border: @black;
+        @preview-hr: fade(@white, 20);
+        @preview-h4-text: fade(@white, 50);
+        @preview-h4-border: lighten(@black, 20);
+        @preview-bold: fade(@white, 90);
+
+    /*#endregion*/
+
+    /*#region == Spinner/Loader/Throbber ==*/
+    @throbber-img: 'road.gif';
+    @throbber-overlay: fade(@black, 80);
+    /*#endregion*/
+
+    /*#region == Autocomplete ==*/
+    @ac-bg: @black;
+    @ac-text: darken(@white, 20);
+    @ac-border: @black;
+    @ac-hover: fade(@blue, 25);
+    @ac-header-text: darken(@white, 25);
+    @ac-header-text-shadow: fade(@black, 20);
+    @ac-header-bg: lighten(@black, 10);
+    /*#endregion*/
+
+    /*#region == Tabs ==*/
+    @tabs-color: lighten(@black, 20);
+    @tabs-text: @white;
+    @tabs-text-shadow: fade(@black, 80);
+    @tabs-border: @black;
+    @tabs-content-bg: fade(@black, 50);
+    /*#endregion*/
+
+    /*#region == Tooltips ==*/
+    @tooltip-bg: lighten(@black, 2);
+    @tooltip-text: darken(@white, 5);
+    @tooltip-border: @black;
+    @tooltip-header-font: @league;
+    @tooltip-header-text: @white;
+    @tooltip-header-shadow: fade(@black, 50);
+    /*#endregion*/
+
+    /*#region == Modals ==*/
+    @modal-overlay: fade(@black, 80);
+    @modal-bg: lighten(@black, 10);
+    @modal-text: darken(@white, 20);
+    @modal-border: @black;
+    @modal-header-bg: lighten(@black, 20);
+    @modal-header-text: darken(@white, 30);
+    @modal-header-text-shadow: fade(@black, 50);
+    @modal-header-border: @black;
+    @modal-header-h3-span: @white;
+    @modal-h4-text: darken(@white, 40);
+    @modal-h4-border: fade(@white, 10);
+    @modal-footer-bg: lighten(@black, 13);
+    @modal-footer-border: @black;
+    /*#endregion*/
+
+    /*#region == Pagination ==*/
+    @pagination-button: @black;
+    @pagination-active: @moss;
+    /*#endregion*/
+
+    /*#region == Scrollbars ==*/
+        @scrollbar-track: lighten(@black, 15);
+        @scrollbar-track-border: lighten(@black, 5);
+        @scrollbar-thumb: lighten(@black, 25);
+        @scrollbar-thumb-border: lighten(@black, 5);
+        @scrollbar-button: lighten(@black, 35);
+        @scrollbar-button-hover: lighten(@black, 45);
+        @scrollbar-button-border: lighten(@black, 5);
+        @scrollbar-arrows: 'scroll-arrows.png';
+        @scrollbar-resizer-bg: @input-bg;
+        @scrollbar-resizer-image: 'scrollbar-resizer.png';
+    /*#endregion*/
+/*#endregion*/
+
+/*#region ==== Sections ====*/
+
+    // Examples
+    @examples-icon-bg: darken(@white, 5);
+    @examples-headings-font: @blizzard;
+
+    /// Mixins
+    @mixin-variable: darken(@fuchsia, 10);
+    @mixin-desc: fade(@code-bg, 5);
+    @mixin-desc-font: @sans-serif;
+    @mixin-desc-text: lighten(@black, 30);
+    @mixin-desc-border: @code-border;
+
+	// Guidelines
+	@guidelines-bold: @gold;
+
+/*#endregion*/
+
+/*==== DO NOT DELETE ====*/
+@import "../../less/import";

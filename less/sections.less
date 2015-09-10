@@ -1,0 +1,166 @@
+#Colors {
+    .colors {
+        .justify-content(start);
+        margin: 20px;
+
+        div {
+            .add-colors;
+            width: 60px;
+            display: block;
+            text-align: center;
+            padding: 10px;
+        }
+    }
+}
+
+#Buttons {
+    .buttons {
+        > button {
+            margin: 0 5px 8px 0;
+            vertical-align: bottom;
+        }
+    }
+}
+
+#Forms {
+    .input, .select, .multiselect, .textarea {
+        &:not(:last-of-type) {
+            margin-bottom: 15px;
+        }
+    }
+
+	#Dates {
+		.time {
+			margin-left: 15px;
+		}
+	}
+
+    #Textareas {
+        > section {
+            > pre:not(:last-of-type) {
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    #Markdown {
+        > section {
+            padding-bottom: 0;
+        }
+    }
+
+    .preview {
+        margin: 0;
+    }
+    .output {
+        .markdown-output;
+        padding: 0 20px 20px;
+    }
+    div.inline {
+        > div {
+            display: inline-block;
+        }
+    }
+}
+
+#Tables {
+    #ScrollDemo {
+        tbody {
+            max-height: 115px;
+        }
+    }
+}
+
+#Tooltips {
+    .qtip {
+        display: block;
+        position: relative;
+        left: auto;
+        top: auto;
+        margin: 20px;
+
+        .qtip-content {
+            h4 {
+                padding: 5px;
+                color: @tooltip-header-text;
+            }
+        }
+    }
+}
+
+#Tabs {
+    h3 {
+        margin-top: 25px;
+    }
+
+    #TabsSizes {
+        h3 {
+            margin-bottom: 15px;
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+#Modals {
+    #DemoModal {
+        position: relative;
+
+        > .modal {
+            display: block;
+            position: absolute;
+
+            > .modal-content {
+                min-width: 80%;
+            }
+        }
+    }
+
+    #DemoModal, #ToggleDemo {
+        > .modal {
+            > .modal-content {
+                > header {
+                    > h1 {
+                        border: 0;
+                        border-bottom: 1px solid @modal-header-border;
+                        color: @modal-header-text;
+                        margin: 0;
+                        padding: 8px 10px 6px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#Icons {
+    span {
+        margin: 0 10px 10px 0;
+    }
+
+    #Teams, #Products {
+        .flex-wrap(wrap);
+        .align-items(start);
+        .justify-content(start);
+    }
+
+    #Teams {
+        span {
+            .get-team-icon(25, 'white');
+        }
+    }
+
+    #Products {
+        span {
+            .get-product-icon(25, 'white');
+        }
+    }
+}
+
+#Guidelines {
+	b {
+		color: @guidelines-bold;
+	}
+}
